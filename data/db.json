@@ -1,0 +1,42 @@
+{
+    "users" : [
+        {   
+            "id": 1,
+            "name": "Leanne Graham",
+            "username": "Bret",
+            "email": "Sincere@april.biz"
+        },
+        {   
+            "id": 2,
+            "name": "Ervin Howell",
+            "username": "Antonette",
+            "email": "Shanna@melissa.tv"
+        }
+    ],
+    "posts" : [
+        {
+            "user": 1,
+            "id": 1,
+            "title": "user 1 post 1",
+            "likes": 30
+        },
+        {
+            "user": 1,
+            "id": 2,
+            "title": "user 1 post 2",
+            "likes": 10
+        },
+        {
+            "user": 2,
+            "id": 1,
+            "title": "user 2 post 1",
+            "likes": 89
+        },
+        {
+            "user": 2,
+            "id": 2,
+            "title": "user 2 post 2",
+            "likes": 1
+        }
+    ]
+}

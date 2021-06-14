@@ -1,38 +1,37 @@
-.App {
-  text-align: center;
+/* fonts */
+@font-face {
+  font-family: 'Avenir Regular';
+  src: url('./assests/fonts/AvenirNextLTPro-Regular.otf');
+}
+@font-face {
+  font-family: 'Avenir Demi';
+  src: url('./assests/fonts/AvenirNextLTPro-Demi.otf');
+}
+@font-face {
+  font-family: 'Avenir Medium';
+  src: url('./assests/fonts/AvenirNextLTPro-Medium.otf');
+}
+@font-face {
+  font-family: 'Avenir Bold';
+  src: url('./assests/fonts/AvenirNextLTPro-Bold.otf');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* font-size */
+.font-14{
+  font-size: 14px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.font-16{
+  font-size: 16px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.font-18{
+  font-size: 18px;
 }
-
-.App-link {
-  color: #61dafb;
+.font-20{
+  font-size: 20px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.font-24{
+  font-size: 24px;
+}
+.font-28{
+  font-size: 28px;
 }

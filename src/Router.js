@@ -43,7 +43,7 @@ const routes = [
     },
     {
         exact: true,
-        path: '/poll',
+        path: '/post',
         gaurd: Layout,
         component: lazy(() => import('./components/posts/CreatePost'))
     },

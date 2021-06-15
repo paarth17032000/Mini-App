@@ -3,7 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 import { Box, Drawer, List, ListItem, ListItemIcon, ListItemText, Typography, Avatar, Button } from '@material-ui/core'
 import HomeIcon from '@material-ui/icons/Home';
 import AddBoxIcon from '@material-ui/icons/AddBox';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+// import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import AppBar from '@material-ui/core/AppBar';
 import Divider from '@material-ui/core/Divider';
 import Hidden from '@material-ui/core/Hidden';
@@ -70,15 +70,18 @@ const styles = (theme) => ({
     // padding: theme.spacing(3,4,3)
   },
   space: {
-    flexGrow: 1
-  },
-  name: {
-    display: 'flex',
-    alignItems: 'center',
+    flexGrow: 1,
     '& > *': {
       margin: theme.spacing(1),
     },
   },
+  // name: {
+  //   display: 'flex',
+  //   alignItems: 'center',
+  //   '& > *': {
+  //     margin: theme.spacing(1),
+  //   },
+  // },
   avatar: {
     backgroundColor: theme.palette.primary.main
   }
@@ -112,15 +115,15 @@ class Layout extends Component {
           path: '/dashboard'
       },
       {
-          text: 'Create New Poll',
+          text: 'Create New Post',
           icon: <AddBoxIcon className={classes.icons}/>,
-          path: '/poll'
+          path: '/post'
       },
-      {
-          text: 'Account',
-          icon: <AccountCircleIcon className={classes.icons}/>,
-          path: '/result'
-      }
+      // {
+      //     text: 'Account',
+      //     icon: <AccountCircleIcon className={classes.icons}/>,
+      //     path: '/result'
+      // }
     ]
   
     const drawer = (
@@ -178,20 +181,22 @@ class Layout extends Component {
             >
               <MenuIcon />
             </IconButton>
-            <Box className={classes.space}>
-               <Button 
-               component={Link}
-               to='/'
-               className={classes.space}
-               >
-                Log Out
-              </Button>
-            </Box>
-            <Box className={classes.name}>
+            <Box
+            display="flex"
+            alignItems="center"
+            className={classes.space}>
               <Typography variant="h6" className="font-20">
                 Paarth Agarwal
               </Typography>
               <Avatar className={classes.avatar}>{''}</Avatar>
+            </Box>
+            <Box>
+               <Button 
+               component={Link}
+               to='/'
+               >
+                Log Out
+              </Button>
             </Box>
           </Toolbar>
         </AppBar>

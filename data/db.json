@@ -1,42 +1,48 @@
 {
-    "users" : [
-        {   
-            "id": 1,
-            "name": "Leanne Graham",
-            "username": "Bret",
-            "email": "Sincere@april.biz"
-        },
-        {   
-            "id": 2,
-            "name": "Ervin Howell",
-            "username": "Antonette",
-            "email": "Shanna@melissa.tv"
-        }
-    ],
-    "posts" : [
-        {
-            "user": 1,
-            "id": 1,
-            "title": "user 1 post 1",
-            "likes": 30
-        },
-        {
-            "user": 1,
-            "id": 2,
-            "title": "user 1 post 2",
-            "likes": 10
-        },
-        {
-            "user": 2,
-            "id": 1,
-            "title": "user 2 post 1",
-            "likes": 89
-        },
-        {
-            "user": 2,
-            "id": 2,
-            "title": "user 2 post 2",
-            "likes": 1
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "name": "Paarth",
+      "username": "paarth17032000",
+      "email": "Sincere@april.biz"
+    },
+    {
+      "id": 2,
+      "name": "Shrey",
+      "username": "shreyJ",
+      "email": "Shanna@melissa.tv"
+    },
+    {
+      "name": "jai",
+      "email": "jai@gmail.com",
+      "username": "jaijai",
+      "id": 3
+    }
+  ],
+  "posts": [
+    {
+      "username": "paarth17032000",
+      "id": 1,
+      "title": "user 1 post 1",
+      "likes": 30
+    },
+    {
+      "username": "paarth17032000",
+      "id": 2,
+      "title": "user 1 post 2",
+      "likes": 10
+    },
+    {
+      "username": "shreyJ",
+      "id": 1,
+      "title": "user 2 post 1",
+      "likes": 89
+    },
+    {
+      "username": "shreyJ",
+      "id": 2,
+      "title": "user 2 post 2",
+      "likes": 1
+    }
+  ]
 }

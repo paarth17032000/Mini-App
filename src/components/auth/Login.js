@@ -1,10 +1,9 @@
 import React, {Component} from 'react'
-import { Button, TextField } from '@material-ui/core'
-// import { Login } from '../../redux/actions.js/authActions'
-// import { connect } from 'react-redux'
-// import { compose } from 'redux'
+import { Button, TextField, Typography } from '@material-ui/core'
+import { Login } from '../../redux/actions/actions'
+import { connect } from 'react-redux'
 import { withStyles } from '@material-ui/styles'
-import { Login } from '../../api/apiCalls'
+
 
 const styles = theme => ({
     root: {
@@ -25,16 +24,17 @@ class LoginPage extends Component{
         super(props)
         this.state={
             email: '',
-            username: ''
+            username: '',
+            password: ''
         }
     }
 
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log(this.state)
-        Login(this.state)
-        this.setState({emai: '', username: ''})
-        // this.props.Login(this.state)
+        // console.log(this.props)
+        this.props.Login(this.state)
+        // Login(this.state)
+        this.setState({email: '', username: '', password: ''})
     }
 
     handleChange = (e) => {
@@ -44,8 +44,8 @@ class LoginPage extends Component{
     }
 
     render(){
-        // console.log( this.props )
-        const {classes} = this.props
+        // console.log(this.props)
+        const {classes, loginError} = this.props
         // console.log('err: ',authError)
         return (
             <form 
@@ -55,6 +55,7 @@ class LoginPage extends Component{
                 <TextField 
                 type="email"
                 name="email"
+                value={this.state.email}
                 className={classes.field}
                 label="Email"
                 placeholder="Email.... "
@@ -63,44 +64,52 @@ class LoginPage extends Component{
                 <TextField 
                 type="text"
                 name="username"
+                value={this.state.username}
                 className={classes.field}
                 label="Username"
                 placeholder="Username.... "
                 onChange={this.handleChange}
                 />
+                <TextField 
+                type="text"
+                name="password"
+                value={this.state.password}
+                className={classes.field}
+                label="Password"
+                placeholder="Password.... "
+                onChange={this.handleChange}
+                />
                 <Button 
                 variant="contained"
                 color="primary"
+                value={this.state}
                 className={classes.field}
                 type="submit"
                 >
                     Login
                 </Button>
-                {/* { authError ? (
+                { loginError ? (
                     <Typography variant="h4" color="error">
                         Error...
                     </Typography>
-                ) : null } */}
+                ) : null }
             </form>
         )
     }
 }
 
-export default  withStyles(styles, {withTheme: true})(LoginPage)
 
-// const mapStateToProps = (state) => {
-//     return{
-//         authError: state.auth.loginError
-//     }
-// }
+const mapStateToProps = (state) => {
+    // console.log(state)
+    return{
+        loginError: state.loginError
+    }
+}
 
-// const mapDispatchToProps = (dispatch) => {
-//     return{
-//         Login: (cred) => dispatch(Login(cred))
-//     }
-// }
+const mapDispatchToProps = (dispatch) => {
+    return{
+        Login: (credentials) => dispatch(Login(credentials))
+    }
+}
 
-// export default compose(
-//     connect(mapStateToProps, mapDispatchToProps),
-//     withStyles(styles, {withTheme: true})
-// )(LoginPage)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles, {withTheme: true})(LoginPage))

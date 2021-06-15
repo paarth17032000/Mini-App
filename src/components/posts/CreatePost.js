@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { TextField, Button } from "@material-ui/core"
 import { withStyles } from "@material-ui/styles";
+import { URL_POSTS } from '../../api/baseUrl/BaseUrl';
+import { connect } from 'react-redux';
 
 const styles = theme => ({
     root: {
@@ -51,6 +53,20 @@ class CreatePost extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         console.log(this.state)
+        fetch(URL_POSTS,{
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                title: this.state.title,
+                desc: this.state.desc,
+                username: this.props.user.username,
+                likes: 0
+            })
+        }).then(() => {
+            console.log('succes')
+        }).catch((err) => {
+            console.log(err)
+        })
         this.setState({
             title: '',
             desc: ''
@@ -97,4 +113,10 @@ class CreatePost extends Component {
     }
 }
 
-export default withStyles(styles, {withTheme:true})(CreatePost)
+const mapStateToProps = (state) => {
+    return{
+        user: state.user[0]
+    }
+}
+ 
+export default connect(mapStateToProps)(withStyles(styles, {withTheme:true})(CreatePost))

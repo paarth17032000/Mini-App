@@ -9,7 +9,7 @@ export default function PostLists(props) {
         <Grid container spacing={3}>
             { posts && posts.map((post) => {
                 return(
-                    <Grid item xs={12} sm={6} lg={4} key={`${post.username}${post.id}`}>
+                    <Grid item xs={9} sm={9} md={6} lg={4} key={`${post.username}${post.id}`}>
                         <PostSummary post={post}/> 
                     </Grid>
                 )

@@ -1,10 +1,8 @@
 import React, {Component} from 'react'
-// import { SignUp } from '../../redux/actions.js/authActions'
-import { Button, TextField } from '@material-ui/core'
+import { Button, TextField, Typography } from '@material-ui/core'
 import { withStyles } from '@material-ui/styles'
-import { SignUp } from '../../api/apiCalls'
-// import { compose } from '@material-ui/system'
-// import { connect } from 'react-redux'
+import { SignUp } from '../../redux/actions/actions'
+import { connect } from 'react-redux'
 
 const styles = theme => ({
     root: {
@@ -26,15 +24,16 @@ class RegisterPage extends Component{
             email: '',
             username: '',
             name: '',
+            password: ''
         }
     }
 
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log(this.state)
-        SignUp(this.state)
+        this.props.SignUp(this.state)
+        // SignUp(this.state)
         this.setState({
-            email: '', name: '', username: ''
+            email: '', name: '', username: '',password: ''
         })
     }
 
@@ -45,7 +44,7 @@ class RegisterPage extends Component{
     }
 
     render(){
-        const {classes} = this.props
+        const {classes, registerError} = this.props
         return (
             <form 
             onSubmit={this.handleSubmit}
@@ -78,6 +77,15 @@ class RegisterPage extends Component{
                 placeholder="Username...."
                 onChange={this.handleChange}
                 />
+                <TextField 
+                type="password"
+                className={classes.field}
+                name="password"
+                value={this.state.password}
+                label="Password"
+                placeholder="Password...."
+                onChange={this.handleChange}
+                />
                 <Button 
                 variant="contained"
                 color="primary"
@@ -86,28 +94,27 @@ class RegisterPage extends Component{
                 >
                     Sign Up
                 </Button>
-                {/* { signUpError ? (
+                { registerError ? (
                     <Typography variant="h4" color="error">
-                        {signUpError}
+                        {registerError}
                     </Typography>
-                ) : null } */}
+                ) : null }
             </form>
         )
     }
 }
 
-export default withStyles(styles, {withTheme: true})(RegisterPage)
+const mapStateToProps = (state) => {
+    console.log(state)
+    return{
+        registerError: state.registerError
+    }
+}
 
-// const mapStateToProps = (state) => {
-//     return{
-//         signUpError: state.auth.signUpError
-//     }
-// }
+const mapDispatchToProps = (dispatch) => {
+    return{
+        SignUp: (credentials) => dispatch(SignUp(credentials))
+    }
+}
 
-// const mapDispatchToProps = (dispatch) => {
-//     return{
-//         SignUp: (credentials) => dispatch(SignUp(credentials))
-//     }
-// }
-
-// export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles, {withTheme: true})(RegisterPage))
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles, {withTheme: true})(RegisterPage))

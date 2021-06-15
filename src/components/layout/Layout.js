@@ -11,6 +11,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import { withStyles } from '@material-ui/styles';
+import { connect } from 'react-redux';
 // import Logo from '../../assests/images/logo.png'
 // import { connect } from 'react-redux';
 
@@ -105,7 +106,8 @@ class Layout extends Component {
 
   render() {
     console.log(this.props)
-    const { window, classes} = this.props;
+
+    const { window, classes, user} = this.props;
     
 
     const menuItems = [
@@ -186,7 +188,7 @@ class Layout extends Component {
             alignItems="center"
             className={classes.space}>
               <Typography variant="h6" className="font-20">
-                Paarth Agarwal
+                {user.name}
               </Typography>
               <Avatar className={classes.avatar}>{''}</Avatar>
             </Box>
@@ -246,12 +248,12 @@ class Layout extends Component {
   }
 }
 
-// const mapStateToProps = (state) => {
-//   console.log(state)
-//   return{
-
-//   }
-// }
+const mapStateToProps = (state) => {
+  console.log(state.user[0])
+  return{
+    user: state.user[0]
+  }
+}
 
 // const mapDispatchToProps = (dispatch) => {
 //     return{
@@ -259,4 +261,4 @@ class Layout extends Component {
 //     }
 // }
 
-export default withStyles(styles, {withTheme: true})(Layout)
+export default connect(mapStateToProps)(withStyles(styles, {withTheme: true})(Layout))

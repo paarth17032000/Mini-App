@@ -1,22 +1,18 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Paarth",
-      "username": "paarth17032000",
-      "email": "Sincere@april.biz"
-    },
-    {
-      "id": 2,
-      "name": "Shrey",
-      "username": "shreyJ",
-      "email": "Shanna@melissa.tv"
-    },
-    {
-      "name": "jai",
+      "name": "Paarth Agarwal",
       "email": "jai@gmail.com",
-      "username": "jaijai",
-      "id": 3
+      "username": "w",
+      "password": "w",
+      "id": 5
+    },
+    {
+      "name": "Paarth Agarwal",
+      "email": "paarth17032000@gmail.com",
+      "username": "paarth17032000",
+      "password": "test1234",
+      "id": 6
     }
   ],
   "posts": [
@@ -34,15 +30,29 @@
     },
     {
       "username": "shreyJ",
-      "id": 1,
+      "id": 3,
       "title": "user 2 post 1",
       "likes": 89
     },
     {
       "username": "shreyJ",
-      "id": 2,
+      "id": 4,
       "title": "user 2 post 2",
       "likes": 1
+    },
+    {
+      "title": "Creator",
+      "desc": "I am a creator",
+      "username": "paarth17032000",
+      "likes": 0,
+      "id": 5
+    },
+    {
+      "title": "Jai",
+      "desc": "main hu jai",
+      "username": "w",
+      "likes": 0,
+      "id": 6
     }
   ]
 }

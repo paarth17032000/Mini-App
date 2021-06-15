@@ -2,26 +2,34 @@
   "users": [
     {
       "name": "Paarth Agarwal",
-      "email": "jai@gmail.com",
-      "username": "w",
-      "password": "w",
-      "id": 5
+      "email": "paarth17032000@gmail.com",
+      "username": "paarth17",
+      "password": "test1234",
+      "id": 1
     },
     {
-      "name": "Paarth Agarwal",
-      "email": "paarth17032000@gmail.com",
-      "username": "paarth17032000",
+      "name": "chch",
+      "email": "chch@gmail.com",
+      "username": "chch",
       "password": "test1234",
-      "id": 6
+      "id": 2
+    },
+    {
+      "name": "shrey",
+      "email": "shrey@gmail.com",
+      "username": "shrej",
+      "password": "qwer",
+      "id": 3
+    },
+    {
+      "name": "ram",
+      "email": "ram@gmail.com",
+      "username": "ram",
+      "password": "ramram",
+      "id": 4
     }
   ],
   "posts": [
-    {
-      "username": "paarth17032000",
-      "id": 1,
-      "title": "user 1 post 1",
-      "likes": 30
-    },
     {
       "username": "paarth17032000",
       "id": 2,
@@ -32,27 +40,21 @@
       "username": "shreyJ",
       "id": 3,
       "title": "user 2 post 1",
-      "likes": 89
-    },
-    {
-      "username": "shreyJ",
-      "id": 4,
-      "title": "user 2 post 2",
-      "likes": 1
+      "likes": 91
     },
     {
       "title": "Creator",
       "desc": "I am a creator",
       "username": "paarth17032000",
-      "likes": 0,
+      "likes": 1,
       "id": 5
     },
     {
-      "title": "Jai",
-      "desc": "main hu jai",
-      "username": "w",
+      "title": "ads",
+      "desc": "ad",
+      "username": "ram",
       "likes": 0,
-      "id": 6
+      "id": 10
     }
   ]
 }

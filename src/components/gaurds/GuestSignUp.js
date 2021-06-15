@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {  withRouter } from 'react-router-dom'
 
-class Guest extends Component {
+class GuestSignUp extends Component {
     componentDidUpdate(){
-        if(this.props.user[0].id)
+        if(this.props.user)
             this.props.history.push('/dashboard')
     }
     render() {
@@ -19,4 +19,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(withRouter(Guest))
+export default connect(mapStateToProps)(withRouter(GuestSignUp))

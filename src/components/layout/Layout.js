@@ -249,9 +249,9 @@ class Layout extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state.user[0])
+  // console.log(state.user[0])
   return{
-    user: state.user[0]
+    user: state.user
   }
 }
 

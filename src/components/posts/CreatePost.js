@@ -63,7 +63,8 @@ class CreatePost extends Component {
                 likes: 0
             })
         }).then(() => {
-            console.log('succes')
+            console.log('success')
+            this.props.history.push('/dashboard')
         }).catch((err) => {
             console.log(err)
         })
@@ -115,7 +116,7 @@ class CreatePost extends Component {
 
 const mapStateToProps = (state) => {
     return{
-        user: state.user[0]
+        user: state.user
     }
 }
  

@@ -5,14 +5,23 @@ import { URL_USERS } from "../../api/baseUrl/BaseUrl"
 
 export const SignUp = (credentials) => {
     return(dispatch) => {
-        fetch(URL_USERS,{
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                name: credentials.name,
-                email: credentials.email,
-                username: credentials.username,
-                password: credentials.password
+        fetch(URL_USERS).then((res) => {
+            let users = res.json()
+            return users
+        }).then((users) => {
+            const user = users.filter(user => user.username === credentials.username && user.email === credentials.email)
+            // console.log(user, user.length)
+            if(user.length !== 0){throw new Error('user already exists')}
+        }).then(() => {
+            fetch(URL_USERS,{
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    name: credentials.name,
+                    email: credentials.email,
+                    username: credentials.username,
+                    password: credentials.password
+                })
             })
         }).then(() => {
             dispatch({
@@ -20,10 +29,9 @@ export const SignUp = (credentials) => {
                 payload: credentials
             })
         }).catch((err) => {
-            console.log(err)
             dispatch({
                 type: "REGISTER_USER_ERROR",
-                payload: err
+                payload: err.message
             })
         })
     }
@@ -36,9 +44,8 @@ export const Login = (credentials) => {
             return users
         }).then((users) => {
             const user = users.filter(user => user.username === credentials.username && user.email === credentials.email && user.password === credentials.password)
-            // console.log(user, user.length)
             if(user.length === 0){throw new Error('user not found')}
-            return user
+            return user[0]
         }).then((user) => {
             dispatch({
                 type: "LOGIN_USER",
@@ -48,7 +55,7 @@ export const Login = (credentials) => {
             console.log(err)
             dispatch({
                 type: "USER_LOGIN_ERROR",
-                payload: err
+                payload: err.message
             })
         })  
     }

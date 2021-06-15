@@ -5,7 +5,7 @@ import Layout from '../layout/Layout'
 
 class Authenticated extends Component {
     componentDidUpdate(){
-        if(!this.props.user[0].id) 
+        if(!this.props.user.username) 
             this.props.history.push('/')
     }
     render() {
@@ -15,6 +15,7 @@ class Authenticated extends Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log(state.user)
     return{
         user: state.user
     }

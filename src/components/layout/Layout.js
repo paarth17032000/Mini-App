@@ -65,7 +65,6 @@ const styles = (theme) => ({
   },
   listItem: {
     height: '56px',
-    // padding: theme.spacing(3,4,3)
   },
   space: {
     flexGrow: 1,
@@ -73,13 +72,6 @@ const styles = (theme) => ({
       margin: theme.spacing(1),
     },
   },
-  // name: {
-  //   display: 'flex',
-  //   alignItems: 'center',
-  //   '& > *': {
-  //     margin: theme.spacing(1),
-  //   },
-  // },
   avatar: {
     backgroundColor: theme.palette.secondary.main
   }
@@ -203,7 +195,6 @@ class Layout extends Component {
 
         {/* SideDrawer */}
         <nav className={classes.drawer} aria-label="mailbox folders">
-          {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
           <Hidden smUp implementation="css">
             <Drawer
               container={container}
@@ -215,7 +206,7 @@ class Layout extends Component {
                 paper: classes.drawerPaper,
               }}
               ModalProps={{
-                keepMounted: true, // Better open performance on mobile.
+                keepMounted: true, 
               }}
             >
               {drawer}

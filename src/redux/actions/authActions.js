@@ -61,7 +61,7 @@ export const Login = (credentials) => {
                 payload: user
             })
         }).catch((err) => {
-            console.log(err)
+            // console.log(err)
             dispatch({
                 type: "USER_LOGIN_ERROR",
                 payload: err.message

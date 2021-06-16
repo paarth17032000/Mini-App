@@ -9,8 +9,6 @@ const styles = theme => ({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        // backgroundColor: 'black',
-        // flexDirection: "column",
         minHeight: '100vh'
     },
     form: {
@@ -19,7 +17,6 @@ const styles = theme => ({
     },
     card: {
         width: 375,
-        // height: 475,
         margin: theme.spacing(2)
     },
     field: {
@@ -44,7 +41,6 @@ class RegisterPage extends Component{
     handleSubmit = (e) => {
         e.preventDefault()
         this.props.SignUp(this.state)
-        // SignUp(this.state)
         this.setState({
             email: '', name: '', username: '',password: ''
         })

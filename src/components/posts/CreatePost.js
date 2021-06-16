@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { TextField, Button, Card, CardContent ,  Typography  } from "@material-ui/core"
+import { TextField, Button, Card, CardContent } from "@material-ui/core"
 import { withStyles } from "@material-ui/styles";
 import { URL_POSTS } from '../../api/baseUrl/BaseUrl';
 import { connect } from 'react-redux';
@@ -15,9 +15,6 @@ const styles = theme => ({
     mp: {
         marginTop: '15px',
     },
-    btn: {
-        marginTop: '45px',
-    },
     color: {
         textAlign: 'center'
     },
@@ -29,34 +26,17 @@ const styles = theme => ({
     },
     form: {
         display: "flex",
-        // justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
         margin: theme.spacing(2)
     },
-    // root: {
-    //     display: "flex",
-    //     justifyContent: "center",
-    //     alignItems: "center",
-    //     // flexDirection: "column",
-    //     minHeight: '100vh',
-    //     // backgroundColor: theme.palette.secondary.main
-    // },
     card: {
-        // backgroundColor: theme.palette.secondary.main,
         width: '90%',
-        // height: 400
     },
-    // field: {
-    //     margin: theme.spacing(2,0)
-    // }, 
-    // btn: {
-    //     margin: theme.spacing(3,0)
-    // },
     btn: {
         margin: theme.spacing(4),
         padding: theme.spacing(1,4),
-        letterSpacing: 1
+        letterSpacing: 2
     }, 
 });
 

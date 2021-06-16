@@ -26,7 +26,6 @@ class Dashboard extends Component {
             })
             return postsToSee
         }).then((postsToSee) => {
-            console.log(postsToSee)
             this.setState({
                 posts: postsToSee
             })

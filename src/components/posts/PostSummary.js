@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Card, CardHeader, CardContent, CardActions, Typography, IconButton, Box, Divider } from '@material-ui/core';
 import { withStyles } from '@material-ui/styles'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-// import FavoriteIcon from '@material-ui/icons/Favorite';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Delete, Like } from '../../api/apiCalls';
 import { withRouter } from 'react-router-dom';
@@ -11,11 +10,8 @@ const styles = (theme) => ({
   root: {
     minWidth: 300,
   },
-  like: {
-    //   color: theme.palette.primary.main,
-  },
-  back: {
-    height: 175,
+  cardContent: {
+    // height: 175,
   }
 })
 
@@ -28,7 +24,7 @@ class PostSummary extends Component{
     }
   }
   render(){
-    console.log(this.state)
+    // console.log(this.state)
     const {classes} = this.props
     const {post} = this.props
 
@@ -54,7 +50,7 @@ class PostSummary extends Component{
           title={`@${post.username}`}
         />
         <Divider />
-        <CardContent className={classes.back}>
+        <CardContent className={classes.cardContent}>
           <Typography variant="h5" color="textSecondary" component="p">
               {post.title}
           </Typography>
@@ -73,11 +69,9 @@ class PostSummary extends Component{
               onClick={handleClick}
               >
                 <FavoriteBorderIcon className={classes.like} />
-              {/* <FavoriteIcon className={classes.like}/> */}
               </IconButton>
               <Typography variant="body1">
                   {this.state.likes}
-                  {/* {post.likes} */}
               </Typography>
           </Box>
         </CardActions>

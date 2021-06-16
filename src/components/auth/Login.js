@@ -10,9 +10,7 @@ const styles = theme => ({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        // flexDirection: "column",
         minHeight: '100vh',
-        // backgroundColor: theme.palette.secondary.main
     },
     form: {
         display: "flex",
@@ -20,9 +18,7 @@ const styles = theme => ({
         margin: theme.spacing(2)
     },
     card: {
-        // backgroundColor: theme.palette.secondary.main,
         width: 375,
-        // height: 400
     },
     field: {
         margin: theme.spacing(2,0)
@@ -118,7 +114,6 @@ class LoginPage extends Component{
 
 
 const mapStateToProps = (state) => {
-    // console.log(state)
     return{
         loginError: state.loginError
     }

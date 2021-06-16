@@ -12,7 +12,7 @@ const rootReducer = (state = initState, action) => {
     switch(action.type){
         // register a user
         case "REGISTER_USER" : 
-            console.log('succes register', action.payload)
+            // console.log('succes register', action.payload)
             return {
                 ...state,
                 user: action.payload,
@@ -20,7 +20,7 @@ const rootReducer = (state = initState, action) => {
             }
         // error while registering
         case "REGISTER_USER_ERROR" :
-            console.log('register error')
+            // console.log('register error')
             return{
                 ...state,
                 registerError: action.payload
@@ -28,7 +28,7 @@ const rootReducer = (state = initState, action) => {
 
         // loging a user inside app
         case "LOGIN_USER" : 
-            console.log('login succes')
+            // console.log('login succes')
             return{
                 ...state,
                 user: action.payload,
@@ -37,7 +37,7 @@ const rootReducer = (state = initState, action) => {
 
         // login error
         case "USER_LOGIN_ERROR" : 
-            console.log('login error')
+            // console.log('login error')
             return{
                 ...state,
                 loginError: action.payload
@@ -45,7 +45,7 @@ const rootReducer = (state = initState, action) => {
         
         // following a new user
         case "ADD_NEW_FOLLOWED_USERS":
-            console.log(action.payload, 'success follow')
+            // console.log(action.payload, 'success follow')
             return{
                 ...state,
                 usersToFollow: [

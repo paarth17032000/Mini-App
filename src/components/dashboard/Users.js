@@ -33,7 +33,6 @@ class Users extends Component {
         this.setState({users})
     }
     render() {
-        // console.log(this.props)
         const {classes, FollowUser} = this.props
         return (
             <>

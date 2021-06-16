@@ -12,12 +12,12 @@ You can like someone’s post and also delete them if you dont want to see them 
 </ul>
 <h2 class="code-line" data-line-start=14 data-line-end=15 ><a id="Installation_14"></a>Installation</h2>
 <pre><code class="has-line-data" data-line-start="17" data-line-end="22" class="language-sh">git <span class="hljs-built_in">clone</span> https://github.com/paarth17032000/Mini-App.git
-<span class="hljs-built_in">cd</span> Mini-app
+<span class="hljs-built_in">cd</span> Mini-App
 npm i
 npm start
 </code></pre>
 <p class="has-line-data" data-line-start="23" data-line-end="24">As this is connected with the db.json file as data base run following command in other terminal to run the json-server</p>
-<pre><code class="has-line-data" data-line-start="26" data-line-end="29" class="language-sh"><span class="hljs-built_in">cd</span> Mini-app
+<pre><code class="has-line-data" data-line-start="26" data-line-end="29" class="language-sh"><span class="hljs-built_in">cd</span> Mini-App
 npx json-server --watch data/db.json --port <span class="hljs-number">8000</span>
 </code></pre>
 <blockquote>

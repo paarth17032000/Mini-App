@@ -3,6 +3,10 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import Layout from '../layout/Layout'
 
+// lets a user in dashboard when it is authenticated 
+// and done basically to display layout different than login and signup
+// work better with real time
+
 class Authenticated extends Component {
     componentDidUpdate(){
         if(!this.props.user.username) 
@@ -15,7 +19,6 @@ class Authenticated extends Component {
 }
 
 const mapStateToProps = (state) => {
-    // console.log(state.user)
     return{
         user: state.user
     }

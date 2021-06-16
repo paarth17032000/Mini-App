@@ -2,6 +2,8 @@
 import { URL_POSTS } from "./baseUrl/BaseUrl"
 
 //  async calls
+
+// req to delete a post
 export const Delete = async (post) => {
     // console.log(post.id)
     await fetch(`${URL_POSTS}/${post.id}`,{
@@ -13,6 +15,7 @@ export const Delete = async (post) => {
     } )
 }
 
+// req to like a post
 export const Like = async (post) => {
     console.log(post.id)
     await fetch(`${URL_POSTS}/${post.id}`,{

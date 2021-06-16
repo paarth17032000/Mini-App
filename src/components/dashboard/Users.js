@@ -25,12 +25,8 @@ class Users extends Component {
         let users = await res.json()
         this.setState({users})
     }
-    // handleClick = (id) => {
-    //     console.log(id,'1212')
-    //     this.props.FollowUser(id)
-    // }
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         const {classes, FollowUser} = this.props
         return (
             <>
@@ -49,7 +45,10 @@ class Users extends Component {
                                         {user.username}
                                     </Typography>
                                     <Button 
-                                    onClick={() => FollowUser(user.username)}
+                                    onClick={() => {
+                                        FollowUser(user.username)
+                                        this.props.history.push('/dashboard')
+                                    }}
                                     variant="contained" 
                                     color="secondary">
                                         Follow

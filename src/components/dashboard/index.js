@@ -16,10 +16,8 @@ class Dashboard extends Component {
             return res.json()
         }).then((posts) => {
             let postsToSee = this.props.usersToFollow.map((username) => {
-                console.log(username)
                 return(
                     posts.filter(post => {
-                        // console.log(post, post.username, username)
                         if(post.username === username){
                             return post
                         }
@@ -39,7 +37,6 @@ class Dashboard extends Component {
     render() {
         return (
             <>
-                {/* {console.log(this.state.posts.length)} */}
                 { this.state.posts.length ? (
                     <PostLists posts={this.state.posts}/>
                 ) : (
@@ -54,7 +51,6 @@ class Dashboard extends Component {
 
 const mapStateToProps = (state) => {
     return{
-        // posts: state.posts
         usersToFollow: state.usersToFollow
     }
 }

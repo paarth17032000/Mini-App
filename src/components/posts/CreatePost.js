@@ -10,8 +10,7 @@ const styles = theme => ({
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
-        minHeight: 'calc(92.6vh)',
-        // backgroundColor: '#ccc'
+        minHeight: 'calc(85.6vh)',
     },
     mp: {
         marginTop: '15px',
@@ -20,7 +19,6 @@ const styles = theme => ({
         marginTop: '45px',
     },
     color: {
-        // backgroundColor: '#fbc531',
         textAlign: 'center'
     },
     m: {

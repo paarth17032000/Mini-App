@@ -22,27 +22,6 @@
       "id": 5
     },
     {
-      "name": "raj",
-      "email": "eaad@gmail.com",
-      "username": "sdma",
-      "password": "sodao",
-      "id": 6
-    },
-    {
-      "name": "manoj",
-      "email": "ma@gmail.com",
-      "username": "manojiii",
-      "password": "test1234",
-      "id": 7
-    },
-    {
-      "name": "ramesh",
-      "email": "ramesh@gmail.com",
-      "username": "rammmm",
-      "password": "test1234",
-      "id": 8
-    },
-    {
       "name": "poll",
       "email": "pol@gmail.com",
       "username": "polllll",
@@ -50,28 +29,14 @@
       "id": 9
     },
     {
-      "name": "rghv",
-      "email": "rghv@gmail.com",
-      "username": "rghv100",
+      "name": "mika",
+      "email": "mika@paaji.com",
+      "username": "mikasingh123",
       "password": "test1234",
-      "id": 10
-    },
-    {
-      "name": "himesh",
-      "email": "him@gmail.com",
-      "username": "himmmmse",
-      "password": "test1234",
-      "id": 11
+      "id": 12
     }
   ],
   "posts": [
-    {
-      "username": "paarth17",
-      "id": 2,
-      "title": "user 1 post 2",
-      "desc": "lorenm ipsdau asdu  adkjna anal adjnda akjbda",
-      "likes": 10
-    },
     {
       "username": "shrej",
       "id": 3,
@@ -82,14 +47,14 @@
       "title": "Creator",
       "desc": "I am a creator",
       "username": "paarth17",
-      "likes": 1,
+      "likes": 4,
       "id": 5
     },
     {
-      "title": "Tic Tac Toe",
-      "desc": "game",
+      "title": "nesciunt quas odio",
+      "desc": "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque",
       "username": "paarth17",
-      "likes": 1,
+      "likes": 3,
       "id": 12
     },
     {
@@ -101,17 +66,24 @@
     },
     {
       "title": "Tic Tac Toe",
-      "desc": "kaka",
+      "desc": "It is a lovely game to play",
       "username": "polllll",
       "likes": 0,
       "id": 14
     },
     {
-      "title": "main hu raj",
-      "desc": "main krta hu party",
+      "title": "Party",
+      "desc": "I like to work hard and party harder",
       "username": "rajch",
       "likes": 0,
       "id": 15
+    },
+    {
+      "title": "Singing",
+      "desc": "I love to sing and dance.",
+      "username": "mikasingh123",
+      "likes": 0,
+      "id": 16
     }
   ]
 }

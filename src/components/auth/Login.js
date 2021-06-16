@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Button, TextField, Typography } from '@material-ui/core'
+import { Button, Card, CardContent , TextField, Typography } from '@material-ui/core'
 import { Login } from '../../redux/actions/authActions'
 import { connect } from 'react-redux'
 import { withStyles } from '@material-ui/styles'
@@ -10,12 +10,24 @@ const styles = theme => ({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        flexDirection: "column",
+        // flexDirection: "column",
         minHeight: '100vh',
         // backgroundColor: theme.palette.secondary.main
     },
+    form: {
+        display: "flex",
+        flexDirection: "column",
+    },
+    card: {
+        // backgroundColor: theme.palette.secondary.main,
+        width: 375,
+        height: 400
+    },
     field: {
         margin: theme.spacing(2,0)
+    }, 
+    btn: {
+        margin: theme.spacing(3,0)
     }
 })
 
@@ -31,9 +43,7 @@ class LoginPage extends Component{
 
     handleSubmit = (e) => {
         e.preventDefault()
-        // console.log(this.props)
         this.props.Login(this.state)
-        // Login(this.state)
         this.setState({email: '', username: '', password: ''})
     }
 
@@ -48,52 +58,61 @@ class LoginPage extends Component{
         const {classes, loginError} = this.props
         // console.log('err: ',authError)
         return (
-            <form 
-            onSubmit={this.handleSubmit}
-            className={classes.root}
-            >
-                <TextField 
-                type="email"
-                name="email"
-                value={this.state.email}
-                className={classes.field}
-                label="Email"
-                placeholder="Email.... "
-                onChange={this.handleChange}
-                />
-                <TextField 
-                type="text"
-                name="username"
-                value={this.state.username}
-                className={classes.field}
-                label="Username"
-                placeholder="Username.... "
-                onChange={this.handleChange}
-                />
-                <TextField 
-                type="text"
-                name="password"
-                value={this.state.password}
-                className={classes.field}
-                label="Password"
-                placeholder="Password.... "
-                onChange={this.handleChange}
-                />
-                <Button 
-                variant="contained"
-                color="primary"
-                value={this.state}
-                className={classes.field}
-                type="submit"
-                >
-                    Login
-                </Button>
-                { loginError ? (
-                    <Typography variant="h4" color="error">
-                        Error...
-                    </Typography>
-                ) : null }
-            </form>
+            <div className={classes.root}>
+                <Card className={classes.card}>
+                    <CardContent>
+                        <Typography variant="h4" align="center" color="secondary">
+                            Login Form
+                        </Typography>
+                        <form 
+                        onSubmit={this.handleSubmit}
+                        className={classes.form}
+                        >
+                            <TextField 
+                            type="email"
+                            name="email"
+                            value={this.state.email}
+                            className={classes.field}
+                            label="Email"
+                            placeholder="Email.... "
+                            onChange={this.handleChange}
+                            />
+                            <TextField 
+                            type="text"
+                            name="username"
+                            value={this.state.username}
+                            className={classes.field}
+                            label="Username"
+                            placeholder="Username.... "
+                            onChange={this.handleChange}
+                            />
+                            <TextField 
+                            type="text"
+                            name="password"
+                            value={this.state.password}
+                            className={classes.field}
+                            label="Password"
+                            placeholder="Password.... "
+                            onChange={this.handleChange}
+                            />
+                            <Button 
+                            variant="contained"
+                            color="secondary"
+                            value={this.state}
+                            className={classes.btn}
+                            type="submit"
+                            >
+                                Login
+                            </Button>
+                            { loginError ? (
+                                <Typography variant="h4" color="error">
+                                    Error...
+                                </Typography>
+                            ) : null }
+                        </form>
+                    </CardContent>
+                </Card>
+            </div>
         )
     }
 }

@@ -4,13 +4,13 @@ const initState = {
     posts: [],
     usersToFollow: [],
     loginError: null,
-    registerError: null,
-    newPostError: null
+    registerError: null
 }
 
 // reducer
 const rootReducer = (state = initState, action) => {
     switch(action.type){
+        // register a user
         case "REGISTER_USER" : 
             console.log('succes register', action.payload)
             return {
@@ -18,7 +18,7 @@ const rootReducer = (state = initState, action) => {
                 user: action.payload,
                 registerError: null
             }
-        
+        // error while registering
         case "REGISTER_USER_ERROR" :
             console.log('register error')
             return{
@@ -26,6 +26,7 @@ const rootReducer = (state = initState, action) => {
                 registerError: action.payload
             }
 
+        // loging a user inside app
         case "LOGIN_USER" : 
             console.log('login succes')
             return{
@@ -34,31 +35,15 @@ const rootReducer = (state = initState, action) => {
                 loginError: null
             }
 
+        // login error
         case "USER_LOGIN_ERROR" : 
             console.log('login error')
             return{
                 ...state,
                 loginError: action.payload
             }
-
-        // case "ADD_NEW_POSTS":
-        //     console.log(action.payload)
-        //     return{
-        //         ...state,
-        //         posts: [
-        //             ...state.posts,
-        //             action.payload
-        //         ],
-        //         newPostError: null
-        //     }
-
-        // case "ADD_NEW_POSTS_ERROR":
-        //     console.log(action.payload)
-        //     return{
-        //         ...state,
-        //         newPostError: action.payload,
-        //     }
-
+        
+        // following a new user
         case "ADD_NEW_FOLLOWED_USERS":
             console.log(action.payload, 'success follow')
             return{

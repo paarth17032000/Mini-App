@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {  withRouter } from 'react-router-dom'
 
+// it is done basically to display layout different than dashboard
+// work better with real time database
+
 class GuestSignUp extends Component {
     componentDidUpdate(){
         if(this.props.user)

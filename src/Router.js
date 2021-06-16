@@ -1,6 +1,5 @@
 import React, { Suspense, Fragment, lazy } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Layout from './components/layout/Layout'
 import Authenticated from './components/gaurds/Authenticated'
 import GuestLogin from './components/gaurds/GuestLogin'
 import GuestSignUp from './components/gaurds/GuestSignUp'
@@ -47,6 +46,12 @@ const routes = [
         path: '/post',
         gaurd: Authenticated,
         component: lazy(() => import('./components/posts/CreatePost'))
+    },
+    {
+        exact: true,
+        path: '/users',
+        gaurd: Authenticated,
+        component: lazy(() => import('./components/dashboard/Users'))
     },
     // {
     //     exact: true,

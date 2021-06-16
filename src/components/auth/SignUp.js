@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { Button, TextField, Typography } from '@material-ui/core'
 import { withStyles } from '@material-ui/styles'
-import { SignUp } from '../../redux/actions/actions'
+import { SignUp } from '../../redux/actions/authActions'
 import { connect } from 'react-redux'
 
 const styles = theme => ({

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { Button, TextField, Typography } from '@material-ui/core'
-import { Login } from '../../redux/actions/actions'
+import { Login } from '../../redux/actions/authActions'
 import { connect } from 'react-redux'
 import { withStyles } from '@material-ui/styles'
 

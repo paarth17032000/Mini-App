@@ -8,13 +8,6 @@
       "id": 1
     },
     {
-      "name": "chch",
-      "email": "chch@gmail.com",
-      "username": "chch",
-      "password": "test1234",
-      "id": 2
-    },
-    {
       "name": "shrey",
       "email": "shrey@gmail.com",
       "username": "shrej",
@@ -22,22 +15,65 @@
       "id": 3
     },
     {
-      "name": "ram",
-      "email": "ram@gmail.com",
-      "username": "ram",
-      "password": "ramram",
-      "id": 4
+      "name": "raj",
+      "email": "raj@gmail.com",
+      "username": "rajch",
+      "password": "test1234",
+      "id": 5
+    },
+    {
+      "name": "raj",
+      "email": "eaad@gmail.com",
+      "username": "sdma",
+      "password": "sodao",
+      "id": 6
+    },
+    {
+      "name": "manoj",
+      "email": "ma@gmail.com",
+      "username": "manojiii",
+      "password": "test1234",
+      "id": 7
+    },
+    {
+      "name": "ramesh",
+      "email": "ramesh@gmail.com",
+      "username": "rammmm",
+      "password": "test1234",
+      "id": 8
+    },
+    {
+      "name": "poll",
+      "email": "pol@gmail.com",
+      "username": "polllll",
+      "password": "test1234",
+      "id": 9
+    },
+    {
+      "name": "rghv",
+      "email": "rghv@gmail.com",
+      "username": "rghv100",
+      "password": "test1234",
+      "id": 10
+    },
+    {
+      "name": "himesh",
+      "email": "him@gmail.com",
+      "username": "himmmmse",
+      "password": "test1234",
+      "id": 11
     }
   ],
   "posts": [
     {
-      "username": "paarth17032000",
+      "username": "paarth17",
       "id": 2,
       "title": "user 1 post 2",
+      "desc": "lorenm ipsdau asdu  adkjna anal adjnda akjbda",
       "likes": 10
     },
     {
-      "username": "shreyJ",
+      "username": "shrej",
       "id": 3,
       "title": "user 2 post 1",
       "likes": 91
@@ -45,16 +81,37 @@
     {
       "title": "Creator",
       "desc": "I am a creator",
-      "username": "paarth17032000",
+      "username": "paarth17",
       "likes": 1,
       "id": 5
     },
     {
-      "title": "ads",
-      "desc": "ad",
-      "username": "ram",
+      "title": "Tic Tac Toe",
+      "desc": "game",
+      "username": "paarth17",
+      "likes": 1,
+      "id": 12
+    },
+    {
+      "title": "poll",
+      "desc": "lets make some awesome polls",
+      "username": "polllll",
       "likes": 0,
-      "id": 10
+      "id": 13
+    },
+    {
+      "title": "Tic Tac Toe",
+      "desc": "kaka",
+      "username": "polllll",
+      "likes": 0,
+      "id": 14
+    },
+    {
+      "title": "main hu raj",
+      "desc": "main krta hu party",
+      "username": "rajch",
+      "likes": 0,
+      "id": 15
     }
   ]
 }

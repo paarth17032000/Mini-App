@@ -1,8 +1,11 @@
 // initstate
 const initState = {
     user: {},
+    posts: [],
+    usersToFollow: [],
     loginError: null,
-    registerError: null
+    registerError: null,
+    newPostError: null
 }
 
 // reducer
@@ -36,6 +39,34 @@ const rootReducer = (state = initState, action) => {
             return{
                 ...state,
                 loginError: action.payload
+            }
+
+        // case "ADD_NEW_POSTS":
+        //     console.log(action.payload)
+        //     return{
+        //         ...state,
+        //         posts: [
+        //             ...state.posts,
+        //             action.payload
+        //         ],
+        //         newPostError: null
+        //     }
+
+        // case "ADD_NEW_POSTS_ERROR":
+        //     console.log(action.payload)
+        //     return{
+        //         ...state,
+        //         newPostError: action.payload,
+        //     }
+
+        case "ADD_NEW_FOLLOWED_USERS":
+            console.log(action.payload, 'success follow')
+            return{
+                ...state,
+                usersToFollow: [
+                    ...state.usersToFollow,
+                    action.payload
+                ]
             }
         
         default :

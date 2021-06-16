@@ -3,7 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 import { Box, Drawer, List, ListItem, ListItemIcon, ListItemText, Typography, Avatar, Button } from '@material-ui/core'
 import HomeIcon from '@material-ui/icons/Home';
 import AddBoxIcon from '@material-ui/icons/AddBox';
-// import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import AppBar from '@material-ui/core/AppBar';
 import Divider from '@material-ui/core/Divider';
 import Hidden from '@material-ui/core/Hidden';
@@ -12,8 +12,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import { withStyles } from '@material-ui/styles';
 import { connect } from 'react-redux';
-// import Logo from '../../assests/images/logo.png'
-// import { connect } from 'react-redux';
 
 const drawerWidth = 267;
 
@@ -121,11 +119,11 @@ class Layout extends Component {
           icon: <AddBoxIcon className={classes.icons}/>,
           path: '/post'
       },
-      // {
-      //     text: 'Account',
-      //     icon: <AccountCircleIcon className={classes.icons}/>,
-      //     path: '/result'
-      // }
+      {
+          text: 'Other Users',
+          icon: <AccountCircleIcon className={classes.icons}/>,
+          path: '/users'
+      }
     ]
   
     const drawer = (

@@ -47,6 +47,7 @@ export const Login = (credentials) => {
             if(user.length === 0){throw new Error('user not found')}
             return user[0]
         }).then((user) => {
+            // localStorage.setItem()
             dispatch({
                 type: "LOGIN_USER",
                 payload: user

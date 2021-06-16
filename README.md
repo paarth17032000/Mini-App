@@ -1,70 +1,32 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="Social_0"></a>Social</h1>
+<h2 class="code-line" data-line-start=1 data-line-end=2 ><a id="Helps_you_get_social_with_others_1"></a>Helps you get social with others</h2>
+<p class="has-line-data" data-line-start="3" data-line-end="5">Social is platform that lets you post something on your mind.<br>
+You can like someone’s post and also delete them if you dont want to see them and also follow users you like.</p>
+<h2 class="code-line" data-line-start=6 data-line-end=7 ><a id="Features_6"></a>Features</h2>
+<ul>
+<li class="has-line-data" data-line-start="8" data-line-end="9">You can register a new user.</li>
+<li class="has-line-data" data-line-start="9" data-line-end="10">You can login as a user.</li>
+<li class="has-line-data" data-line-start="10" data-line-end="11">You can add a post.</li>
+<li class="has-line-data" data-line-start="11" data-line-end="12">You can like someone’s post</li>
+<li class="has-line-data" data-line-start="12" data-line-end="14">You can delete someone’s post</li>
+</ul>
+<h2 class="code-line" data-line-start=14 data-line-end=15 ><a id="Installation_14"></a>Installation</h2>
+<pre><code class="has-line-data" data-line-start="17" data-line-end="22" class="language-sh">git <span class="hljs-built_in">clone</span> https://github.com/paarth17032000/Mini-App.git
+<span class="hljs-built_in">cd</span> Mini-app
+npm i
+npm start
+</code></pre>
+<p class="has-line-data" data-line-start="23" data-line-end="24">As this is connected with the db.json file as data base run following command in other terminal to run the json-server</p>
+<pre><code class="has-line-data" data-line-start="26" data-line-end="29" class="language-sh"><span class="hljs-built_in">cd</span> Mini-app
+npx json-server --watch data/db.json --port <span class="hljs-number">8000</span>
+</code></pre>
+<blockquote>
+<p class="has-line-data" data-line-start="29" data-line-end="30">Note: <code>--port 8000</code> is required as all routes in the code are linked to that.</p>
+</blockquote>
+<h2 class="code-line" data-line-start=32 data-line-end=33 ><a id="Tech_32"></a>Tech</h2>
+<ul>
+<li class="has-line-data" data-line-start="33" data-line-end="34">React</li>
+<li class="has-line-data" data-line-start="34" data-line-end="35">Redux</li>
+<li class="has-line-data" data-line-start="35" data-line-end="37">Material - UI</li>
+</ul>
+<p class="has-line-data" data-line-start="37" data-line-end="38"><strong>Have a fruitful day !!</strong></p>

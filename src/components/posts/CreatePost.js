@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { TextField, Button } from "@material-ui/core"
+import { TextField, Button, Card, CardContent ,  Typography  } from "@material-ui/core"
 import { withStyles } from "@material-ui/styles";
 import { URL_POSTS } from '../../api/baseUrl/BaseUrl';
 import { connect } from 'react-redux';
@@ -10,7 +10,7 @@ const styles = theme => ({
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
-        minHeight: 'calc(85.6vh)',
+        minHeight: 'calc(84.6vh)',
     },
     mp: {
         marginTop: '15px',
@@ -29,10 +29,35 @@ const styles = theme => ({
     },
     form: {
         display: "flex",
-        justifyContent: "center",
+        // justifyContent: "center",
         alignItems: "center",
-        flexDirection: "column"
+        flexDirection: "column",
+        margin: theme.spacing(2)
     },
+    // root: {
+    //     display: "flex",
+    //     justifyContent: "center",
+    //     alignItems: "center",
+    //     // flexDirection: "column",
+    //     minHeight: '100vh',
+    //     // backgroundColor: theme.palette.secondary.main
+    // },
+    card: {
+        // backgroundColor: theme.palette.secondary.main,
+        width: '90%',
+        // height: 400
+    },
+    // field: {
+    //     margin: theme.spacing(2,0)
+    // }, 
+    // btn: {
+    //     margin: theme.spacing(3,0)
+    // },
+    btn: {
+        margin: theme.spacing(4),
+        padding: theme.spacing(1,4),
+        letterSpacing: 1
+    }, 
 });
 
 class CreatePost extends Component {
@@ -74,12 +99,15 @@ class CreatePost extends Component {
     render() {
         const { classes } = this.props;
         return (
-            <>
-              <form 
-                    className={`${classes.form} ${classes.root}`}
-                    onSubmit={this.handleSubmit}
-                    >
+            <div className={classes.root}>
+              <Card className={classes.card}>
+                <CardContent>
+                    <form 
+                        className={`${classes.form} `}
+                        onSubmit={this.handleSubmit}
+                        >
                         <TextField
+                        fullWidth
                         className={classes.m}
                         name="title"
                         value={this.state.title}
@@ -90,6 +118,7 @@ class CreatePost extends Component {
                         onChange={this.handleChange}
                         />
                         <TextField
+                        fullWidth
                         className={classes.m}
                         name="desc"
                         value={this.state.desc}
@@ -101,13 +130,16 @@ class CreatePost extends Component {
                         />
                         <Button 
                         variant="contained" 
-                        color="primary"
+                        color="secondary"
                         type="submit"
+                        className={classes.btn}
                         >
                             Create
                         </Button>
-                </form>  
-            </>
+                    </form>
+                </CardContent>
+              </Card>  
+            </div>
         )
     }
 }

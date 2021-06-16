@@ -1,4 +1,4 @@
-import { Typography, Button, Box } from '@material-ui/core'
+import { Typography, Button, Box, Card, CardContent } from '@material-ui/core'
 import { withStyles } from '@material-ui/styles'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
@@ -10,6 +10,13 @@ const styles = theme => ({
         '& > *': {
                 margin: theme.spacing(1),
         },
+    },
+    card: {
+        margin: theme.spacing(2),
+        width: 425
+    },
+    username: {
+        flexGrow: 1
     }
 })
 
@@ -34,26 +41,27 @@ class Users extends Component {
                     <div>
                         { this.state.users.map(user => {
                             return(
-                                <Box
-                                key={user.id}
-                                className={classes.back}
-                                display="flex"
-                                m={2,2}
-                                p={2,2}
-                                >
-                                    <Typography  variant="h4" color="secondary">
-                                        {user.username}
-                                    </Typography>
-                                    <Button 
-                                    onClick={() => {
-                                        FollowUser(user.username)
-                                        this.props.history.push('/dashboard')
-                                    }}
-                                    variant="contained" 
-                                    color="secondary">
-                                        Follow
-                                    </Button>
-                                </Box>
+                                <Card key={user.id} className={classes.card}>
+                                    <CardContent>
+                                        <Box
+                                        className={classes.back}
+                                        display="flex"
+                                        >
+                                            <Typography  variant="h4" color="secondary" className={classes.username}>
+                                                {user.username}
+                                            </Typography>
+                                            <Button 
+                                            onClick={() => {
+                                                FollowUser(user.username)
+                                                this.props.history.push('/dashboard')
+                                            }}
+                                            variant="contained" 
+                                            color="secondary">
+                                                Follow
+                                            </Button>
+                                        </Box>
+                                    </CardContent>
+                                </Card>
                             )
                         })}
                     </div>

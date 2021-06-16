@@ -9,6 +9,7 @@ const styles = theme => ({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        // backgroundColor: 'black',
         // flexDirection: "column",
         minHeight: '100vh'
     },
@@ -17,9 +18,9 @@ const styles = theme => ({
         flexDirection: "column",
     },
     card: {
-        // backgroundColor: theme.palette.secondary.main,
         width: 375,
-        height: 475
+        // height: 475,
+        margin: theme.spacing(2)
     },
     field: {
         margin: theme.spacing(2,0)
@@ -113,7 +114,7 @@ class RegisterPage extends Component{
                                 Sign Up
                             </Button>
                             { registerError ? (
-                                <Typography variant="h4" color="error">
+                                <Typography variant="h4" align="center" color="error">
                                     {registerError}
                                 </Typography>
                             ) : null }

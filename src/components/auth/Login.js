@@ -17,11 +17,12 @@ const styles = theme => ({
     form: {
         display: "flex",
         flexDirection: "column",
+        margin: theme.spacing(2)
     },
     card: {
         // backgroundColor: theme.palette.secondary.main,
         width: 375,
-        height: 400
+        // height: 400
     },
     field: {
         margin: theme.spacing(2,0)
@@ -54,9 +55,7 @@ class LoginPage extends Component{
     }
 
     render(){
-        // console.log(this.props)
         const {classes, loginError} = this.props
-        // console.log('err: ',authError)
         return (
             <div className={classes.root}>
                 <Card className={classes.card}>
@@ -99,13 +98,13 @@ class LoginPage extends Component{
                             variant="contained"
                             color="secondary"
                             value={this.state}
-                            className={classes.btn}
+                            className={`${classes.btn} btn`}
                             type="submit"
                             >
                                 Login
                             </Button>
                             { loginError ? (
-                                <Typography variant="h4" color="error">
+                                <Typography variant="h4" align="center" color="error">
                                     Error...
                                 </Typography>
                             ) : null }

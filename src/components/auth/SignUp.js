@@ -9,11 +9,13 @@ const styles = theme => ({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        minHeight: '100vh'
+        minHeight: '100vh',
+        backgroundColor: '#2C3A47'
     },
     form: {
         display: "flex",
         flexDirection: "column",
+        margin: theme.spacing(1,3)
     },
     card: {
         width: 375,
@@ -123,7 +125,6 @@ class RegisterPage extends Component{
 }
 
 const mapStateToProps = (state) => {
-    console.log(state)
     return{
         registerError: state.registerError
     }

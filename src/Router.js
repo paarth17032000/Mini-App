@@ -53,6 +53,12 @@ const routes = [
         gaurd: Authenticated,
         component: lazy(() => import('./components/dashboard/Users'))
     },
+    {
+        exact: true,
+        path: '/myposts',
+        gaurd: Authenticated,
+        component: lazy(() => import('./components/posts/OwnPosts'))
+    },
     // {
     //     exact: true,
     //     path: '/poll/:poll_id',

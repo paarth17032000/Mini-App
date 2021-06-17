@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Card, CardHeader, CardContent, CardActions, Typography, IconButton, Box, Divider } from '@material-ui/core';
 import { withStyles } from '@material-ui/styles'
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import DeleteIcon from '@material-ui/icons/Delete';
-import { Delete, Like } from '../../api/apiCalls';
+import { Delete, Like, UnLike } from '../../api/apiCalls';
 import { withRouter } from 'react-router-dom';
 
 const styles = (theme) => ({
@@ -12,6 +13,9 @@ const styles = (theme) => ({
   },
   cardContent: {
     // height: 175,
+  },
+  like:{
+    backgroundColor: '1px solid #2C3A47'
   }
 })
 
@@ -20,32 +24,43 @@ class PostSummary extends Component{
   constructor(props){
     super(props)
     this.state = {
-      likes: this.props.post.likes
+      likes: this.props.post.likes,
+      count: 0
     }
   }
   render(){
-    // console.log(this.state)
-    const {classes} = this.props
-    const {post} = this.props
+    const {classes, post} = this.props
 
     const handleDelete = () => {
       Delete(post)
     }
 
     const handleClick = () => {
-      Like(post)
-      this.setState({
-        likes: this.state.likes + 1
-      })
+      if(this.state.count === 0){
+        Like(post)
+        this.setState({
+          likes: this.state.likes + 1,
+          count: this.state.count + 1
+        })
+      }else if(this.state.count === 1){
+        UnLike(post)
+        this.setState({
+          likes: this.state.likes - 1,
+          count: this.state.count - 1
+        })
+      }
+      
+      
     }
 
     return (
       <Card className={classes.root}>
         <CardHeader
-          action={
-            <IconButton onClick={handleDelete} aria-label="settings">
-              <DeleteIcon />
-            </IconButton>
+          action={ this.props.delete ? (
+              <IconButton onClick={handleDelete} >
+                <DeleteIcon />
+              </IconButton>
+            ) : null
           }
           title={`@${post.username}`}
         />
@@ -65,11 +80,20 @@ class PostSummary extends Component{
           alignItems="center"
           className={classes.box}
           >
-              <IconButton 
-              onClick={handleClick}
-              >
-                <FavoriteBorderIcon className={classes.like} />
-              </IconButton>
+              { this.state.count === 0 ? (
+                <IconButton 
+                onClick={handleClick}
+                >
+                  <FavoriteBorderIcon className={classes.like} />
+                </IconButton>
+              ) : (
+                <IconButton 
+                color="secondary"
+                onClick={handleClick}
+                >
+                  <FavoriteIcon className={classes.unlike} />
+                </IconButton>
+              )}
               <Typography variant="body1">
                   {this.state.likes}
               </Typography>

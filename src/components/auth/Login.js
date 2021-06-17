@@ -11,6 +11,7 @@ const styles = theme => ({
         justifyContent: "center",
         alignItems: "center",
         minHeight: '100vh',
+        backgroundColor: '#2C3A47'
     },
     form: {
         display: "flex",
@@ -82,7 +83,7 @@ class LoginPage extends Component{
                             onChange={this.handleChange}
                             />
                             <TextField 
-                            type="text"
+                            type="password"
                             name="password"
                             value={this.state.password}
                             className={classes.field}

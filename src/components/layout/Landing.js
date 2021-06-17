@@ -1,8 +1,9 @@
-import { Box, Button, makeStyles, Typography } from '@material-ui/core'
-import React from 'react'
+import { Box, Button, Typography } from '@material-ui/core'
+import { withStyles } from '@material-ui/styles'
+import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 
-const useStyles = makeStyles( theme => ({
+const styles = theme => ({
     root: {
         display: "flex",
         justifyContent: "center",
@@ -26,35 +27,42 @@ const useStyles = makeStyles( theme => ({
     title: {
         color: 'white',
     }
-}))
+})
 
-export default function LandingPage() {
-    const classes = useStyles()
-    return (        
-        <div className={classes.root}>
-            <Box className={classes.title}>
-                <Typography variant="h2">
-                    Social
-                </Typography>
-            </Box>
-            <Box>
-                <Button
-                variant="outlined"
-                component={Link}
-                to='/login'
-                className={classes.btn}
-                >
-                    Login
-                </Button>
-                <Button
-                variant="outlined"
-                component={Link}
-                to='/signup'
-                className={classes.btn}
-                >
-                    SignUp
-                </Button>
-            </Box>
-        </div>
-    )
+class LandingPage extends Component {
+    componentDidMount(){
+        localStorage.setItem('user', null)
+    }
+    render(){
+        const {classes} = this.props
+        return (        
+            <div className={classes.root}>
+                <Box className={classes.title}>
+                    <Typography variant="h2">
+                        Social
+                    </Typography>
+                </Box>
+                <Box>
+                    <Button
+                    variant="outlined"
+                    component={Link}
+                    to='/login'
+                    className={classes.btn}
+                    >
+                        Login
+                    </Button>
+                    <Button
+                    variant="outlined"
+                    component={Link}
+                    to='/signup'
+                    className={classes.btn}
+                    >
+                        SignUp
+                    </Button>
+                </Box>
+            </div>
+        )
+    }
 }
+
+export default withStyles(styles, {withTheme: true})(LandingPage)

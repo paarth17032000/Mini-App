@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { NavLink, Link } from 'react-router-dom';
-import { Box, Drawer, List, ListItem, ListItemIcon, ListItemText, Typography, Avatar, Button } from '@material-ui/core'
+import { Box, Drawer, List, ListItem, ListItemIcon, ListItemText, Typography, Avatar, Button} from '@material-ui/core'
 import HomeIcon from '@material-ui/icons/Home';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import PeopleIcon from '@material-ui/icons/People';
 import AppBar from '@material-ui/core/AppBar';
+import Popover from '@material-ui/core/Popover';
 import Divider from '@material-ui/core/Divider';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
@@ -67,13 +69,21 @@ const styles = (theme) => ({
     height: '56px',
   },
   space: {
-    flexGrow: 1,
+    flexGrow: 1
+  },
+  avatar: {
+    backgroundColor: theme.palette.secondary.main
+  }, 
+  name: {
     '& > *': {
       margin: theme.spacing(1),
     },
   },
-  avatar: {
-    backgroundColor: theme.palette.secondary.main
+  logOut: {
+    padding:  theme.spacing(1,2),
+  },
+  marginBox: {
+    margin: theme.spacing(4,4)
   }
 });
 
@@ -84,6 +94,7 @@ class Layout extends Component {
     super(props)
     this.state = {
       mobileOpen: false, 
+      anchorEl: null
     }
   }
 
@@ -96,6 +107,18 @@ class Layout extends Component {
   handleLogout = () => {
     localStorage.setItem('user', null)
   }
+
+  handleClick = (event) => {
+    this.setState({
+      anchorEl: event.currentTarget
+    })
+  };
+
+  handleClose = () => {
+    this.setState({
+      anchorEl: null
+    })
+  };
 
   render() {
 
@@ -115,8 +138,13 @@ class Layout extends Component {
       },
       {
           text: 'Other Users',
-          icon: <AccountCircleIcon className={classes.icons}/>,
+          icon: <PeopleIcon className={classes.icons}/>,
           path: '/users'
+      },
+      {
+          text: 'My Posts',
+          icon: <AccountCircleIcon className={classes.icons}/>,
+          path: '/myposts'
       }
     ]
   
@@ -125,8 +153,8 @@ class Layout extends Component {
         <Box 
           display="flex" 
           alignItems="center"
-          m={4,4}
-          className={classes.toolbar}
+          // m={4,4}
+          className={`${classes.toolbar} ${classes.marginBox}`}
         >
           <Typography variant="h5">
               Social House
@@ -153,11 +181,11 @@ class Layout extends Component {
     );
   
     const container = window !== undefined ? () => window().document.body : undefined;
-    
+    const open = Boolean(this.state.anchorEl);
+    const id = open ? 'simple-popover' : undefined;
     
     return (
       <div className={classes.root}>
-
 
         {/* Navbar */}
         <AppBar elevation={0} position="fixed" className={classes.appBar}>
@@ -171,23 +199,47 @@ class Layout extends Component {
             >
               <MenuIcon />
             </IconButton>
+            <div className={classes.space}></div>
             <Box
             display="flex"
             alignItems="center"
-            className={classes.space}>
-              <Typography variant="h6" className="font-20">
-                {JSON.parse(localStorage.getItem('user')).name}
+            className={classes.name}
+            >
+              <Typography variant="h6" noWrap>
+                {JSON.parse(localStorage.getItem('user')).name.toUpperCase()}
               </Typography>
-              <Avatar className={classes.avatar}>{JSON.parse(localStorage.getItem('user')).name[0]}</Avatar>
-            </Box>
-            <Box>
-               <Button 
-               component={Link}
-               onClick={this.handleLogout}
-               to='/'
-               >
-                Log Out
-              </Button>
+              <Avatar 
+              aria-describedby={id}
+              color="primary" 
+              variant="rounded"
+              className={classes.avatar}
+              onClick={this.handleClick}
+              >
+                {JSON.parse(localStorage.getItem('user')).name[0].toUpperCase()}
+              </Avatar>
+              <Popover
+                id={id}
+                open={open}
+                anchorEl={this.state.anchorEl}
+                onClose={this.handleClose}
+                anchorOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'right',
+                }}
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+              >
+                <Button 
+                className={classes.logOut}
+                component={Link}
+                onClick={this.handleLogout}
+                to='/'
+                >
+                  Log Out
+                </Button>
+              </Popover>
             </Box>
           </Toolbar>
         </AppBar>
@@ -237,3 +289,22 @@ class Layout extends Component {
 }
 
 export default withStyles(styles, {withTheme: true})(Layout)
+
+
+
+
+
+
+
+// const useStyles = makeStyles((theme) => ({
+// 
+// }));
+
+// export default function SimplePopover() {
+//   const [anchorEl, setAnchorEl] = React.useState(null);
+
+// const [anchorEl, setAnchorEl] = React.useState(null);
+  // const open = Boolean(anchorEl);
+  // const id = open ? 'simple-popover' : undefined;
+
+// }

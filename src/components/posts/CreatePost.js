@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { TextField, Button, Card, CardContent } from "@material-ui/core"
 import { withStyles } from "@material-ui/styles";
 import { URL_POSTS } from '../../api/baseUrl/BaseUrl';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 const styles = theme => ({
     root: {
@@ -55,19 +55,20 @@ class CreatePost extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log(this.state)
+        let username = JSON.parse(localStorage.getItem('user')).username
+        // console.log(this.state)
         fetch(URL_POSTS,{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
                 title: this.state.title,
                 desc: this.state.desc,
-                username: this.props.user.username,
+                username: username,
                 likes: 0
             })
         }).then(() => {
-            console.log('success')
-            this.props.history.push('/dashboard')
+            // console.log('success')
+            this.props.history.push('/myposts')
         }).catch((err) => {
             console.log(err)
         })
@@ -124,10 +125,12 @@ class CreatePost extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return{
-        user: state.user
-    }
-}
+export default withStyles(styles, {withTheme:true})(CreatePost)
+
+// const mapStateToProps = (state) => {
+//     return{
+//         user: state.user
+//     }
+// }
  
-export default connect(mapStateToProps)(withStyles(styles, {withTheme:true})(CreatePost))
+// export default connect(mapStateToProps)(withStyles(styles, {withTheme:true})(CreatePost))

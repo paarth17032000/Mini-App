@@ -12,7 +12,7 @@ export default function PostLists(props) {
                     return post.map((singlePost) => {
                         return(
                             <Grid item xs={9} sm={9} md={6} lg={4} key={`${singlePost.username}${singlePost.id}`}>
-                                <PostSummary post={singlePost}/> 
+                                <PostSummary post={singlePost} delete={false}/> 
                             </Grid>
                         )
                     })

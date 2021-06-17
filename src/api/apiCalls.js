@@ -17,7 +17,6 @@ export const Delete = async (post) => {
 
 // req to like a post
 export const Like = async (post) => {
-    console.log(post.id)
     await fetch(`${URL_POSTS}/${post.id}`,{
       method: 'PATCH',
       headers: {'Content-Type': 'application/json'},
@@ -29,4 +28,19 @@ export const Like = async (post) => {
     }).catch((err) => {
       console.log(err.message)
     })
+}
+
+// to unlike the liked post  
+export const UnLike = async (post) => {
+  await fetch(`${URL_POSTS}/${post.id}`,{
+    method: 'PATCH',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      likes: post.likes
+    })
+  }).then(() => {
+    console.log('updates')
+  }).catch((err) => {
+    console.log(err.message)
+  })
 }

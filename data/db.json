@@ -34,6 +34,13 @@
       "username": "mikasingh123",
       "password": "test1234",
       "id": 12
+    },
+    {
+      "name": "Yoshi",
+      "email": "yoshI@gmail.com",
+      "username": "yoshi123",
+      "password": "test1234",
+      "id": 13
     }
   ],
   "posts": [
@@ -41,41 +48,27 @@
       "username": "shrej",
       "id": 3,
       "title": "user 2 post 1",
-      "likes": 91
-    },
-    {
-      "title": "Creator",
-      "desc": "I am a creator",
-      "username": "paarth17",
-      "likes": 4,
-      "id": 5
-    },
-    {
-      "title": "nesciunt quas odio",
-      "desc": "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque",
-      "username": "paarth17",
-      "likes": 3,
-      "id": 12
+      "likes": 90
     },
     {
       "title": "poll",
       "desc": "lets make some awesome polls",
       "username": "polllll",
-      "likes": 0,
+      "likes": 54,
       "id": 13
     },
     {
       "title": "Tic Tac Toe",
       "desc": "It is a lovely game to play",
       "username": "polllll",
-      "likes": 0,
+      "likes": 4,
       "id": 14
     },
     {
       "title": "Party",
       "desc": "I like to work hard and party harder",
       "username": "rajch",
-      "likes": 0,
+      "likes": 3,
       "id": 15
     },
     {
@@ -86,11 +79,18 @@
       "id": 16
     },
     {
-      "title": "Tic Tac Toe",
-      "desc": "asdknoisndioasndasndljandlnajkdn",
+      "title": "Paarth",
+      "desc": "this post is created by me hurray !!",
       "username": "paarth17",
-      "likes": 0,
+      "likes": 3,
       "id": 17
+    },
+    {
+      "title": "Rainbow",
+      "desc": "Rainbow has 7 colors and I love rainbow",
+      "username": "yoshi123",
+      "likes": 0,
+      "id": 18
     }
   ]
 }

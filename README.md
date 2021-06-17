@@ -24,9 +24,10 @@ npx json-server --watch data/db.json --port <span class="hljs-number">8000</span
 <p class="has-line-data" data-line-start="29" data-line-end="30">Note: <code>--port 8000</code> is required as all routes in the code are linked to that.</p>
 </blockquote>
 <h2 class="code-line" data-line-start=32 data-line-end=33 ><a id="Tech_32"></a>Tech</h2>
-<ul>
-<li class="has-line-data" data-line-start="33" data-line-end="34">React</li>
-<li class="has-line-data" data-line-start="34" data-line-end="35">Redux</li>
-<li class="has-line-data" data-line-start="35" data-line-end="37">Material - UI</li>
-</ul>
+<div>  
+    <img src=https://img.shields.io/badge/react-%23000000.svg?&style=for-the-badge&logo=react&logoColor=white%20alt=react%20style=%22margin-bottom:%205px; alt=react style="margin-bottom: 5px;" />
+    <img src=https://img.shields.io/badge/redux-%23000000.svg?&style=for-the-badge&logo=redux&logoColor=white%20alt=redux%20style=%22margin-bottom:%205px; alt=redux style="margin-bottom: 5px;" />
+    <img src=https://img.shields.io/badge/Material%20UI-%23000000.svg?&style=for-the-badge&logo=material-ui&logoColor=white%20alt=material-ui%20style=%22margin-bottom:%205px; alt=material-ui style="margin-bottom: 5px;" />
+
+</div>  
 <p class="has-line-data" data-line-start="37" data-line-end="38"><strong>Have a fruitful day !!</strong></p>

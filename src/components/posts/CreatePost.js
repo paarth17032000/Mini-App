@@ -45,7 +45,8 @@ class CreatePost extends Component {
         super(props)
         this.state = {
             title: '',
-            desc: ''
+            desc: '',
+            image: ''
         }
     }
     handleChange = (e) => {
@@ -56,13 +57,14 @@ class CreatePost extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         let username = JSON.parse(localStorage.getItem('user')).username
-        // console.log(this.state)
+        console.log(this.state)
         fetch(URL_POSTS,{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
                 title: this.state.title,
                 desc: this.state.desc,
+                image: this.state.image,
                 username: username,
                 likes: 0
             })
@@ -74,7 +76,8 @@ class CreatePost extends Component {
         })
         this.setState({
             title: '',
-            desc: ''
+            desc: '',
+            image: ''
         })
     } 
     render() {
@@ -107,6 +110,18 @@ class CreatePost extends Component {
                         variant="standard"
                         id="standard-error"
                         label="desc"
+                        onChange={this.handleChange}
+                        />
+                        <TextField
+                        fullWidth
+                        className={classes.m}
+                        name="image"
+                        value={this.state.image}
+                        error={false}
+                        variant="standard"
+                        id="standard-error"
+                        label="Enter Image Url"
+                        placeholder="Online Urls..."
                         onChange={this.handleChange}
                         />
                         <Button 

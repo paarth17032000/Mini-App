@@ -48,11 +48,14 @@
       "username": "shrej",
       "id": 3,
       "title": "user 2 post 1",
+      "desc": "lets fly",
+      "image": "https://homepages.cae.wisc.edu/~ece533/images/airplane.png",
       "likes": 90
     },
     {
       "title": "poll",
       "desc": "lets make some awesome polls",
+      "image": "https://homepages.cae.wisc.edu/~ece533/images/monarch.png",
       "username": "polllll",
       "likes": 54,
       "id": 13
@@ -60,6 +63,7 @@
     {
       "title": "Tic Tac Toe",
       "desc": "It is a lovely game to play",
+      "image": "https://images.pexels.com/photos/163016/crash-test-collision-60-km-h-distraction-163016.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "username": "polllll",
       "likes": 4,
       "id": 14
@@ -67,6 +71,7 @@
     {
       "title": "Party",
       "desc": "I like to work hard and party harder",
+      "image": "https://images.pexels.com/photos/212286/pexels-photo-212286.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
       "username": "rajch",
       "likes": 3,
       "id": 15
@@ -74,23 +79,42 @@
     {
       "title": "Singing",
       "desc": "I love to sing and dance.",
+      "image": "https://images.pexels.com/photos/33779/hand-microphone-mic-hold.jpg?auto=compress&cs=tinysrgb&h=750&w=1260",
       "username": "mikasingh123",
-      "likes": 0,
+      "likes": 2,
       "id": 16
     },
     {
       "title": "Paarth",
       "desc": "this post is created by me hurray !!",
+      "image": "https://homepages.cae.wisc.edu/~ece533/images/boat.png",
       "username": "paarth17",
-      "likes": 3,
+      "likes": 6,
       "id": 17
     },
     {
       "title": "Rainbow",
       "desc": "Rainbow has 7 colors and I love rainbow",
+      "image": "https://www.gstatic.com/webp/gallery3/2.png",
       "username": "yoshi123",
       "likes": 0,
       "id": 18
+    },
+    {
+      "title": "Image test",
+      "desc": "img",
+      "image": "https://picsum.photos/200/300?grayscale",
+      "username": "paarth17",
+      "likes": 0,
+      "id": 19
+    },
+    {
+      "title": "asd",
+      "desc": "asf",
+      "image": "https://www.gstatic.com/webp/gallery3/5.png",
+      "username": "paarth17",
+      "likes": 0,
+      "id": 20
     }
   ]
 }

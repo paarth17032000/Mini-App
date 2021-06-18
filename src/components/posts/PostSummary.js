@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardHeader, CardContent, CardActions, Typography, IconButton, Box, Divider } from '@material-ui/core';
+import { Card, CardHeader, CardContent, CardMedia , CardActions, Typography, IconButton, Box, Divider } from '@material-ui/core';
 import { withStyles } from '@material-ui/styles'
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
@@ -11,8 +11,9 @@ const styles = (theme) => ({
   root: {
     minWidth: 300,
   },
-  cardContent: {
-    // height: 175,
+  media: {
+    height: 0,
+    paddingTop: '56.25%', // 16:9
   },
   like:{
     backgroundColor: '1px solid #2C3A47'
@@ -64,7 +65,13 @@ class PostSummary extends Component{
           }
           title={`@${post.username}`}
         />
-        <Divider />
+        { post.image ? (
+          <CardMedia
+            className={classes.media}
+            image={post.image}
+            title="Paella dish"
+          />
+        ) : null }
         <CardContent className={classes.cardContent}>
           <Typography variant="h5" color="textSecondary" component="p">
               {post.title}
